@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^4.3.2+1
+  http: ^0.12.2
 
   cupertino_icons: ^0.1.3
 
