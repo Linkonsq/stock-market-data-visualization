@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class Data with ChangeNotifier {
-  final String id;
   final String date;
   final String tradeCode;
   final String high;
@@ -12,7 +10,6 @@ class Data with ChangeNotifier {
   final String volume;
 
   Data({
-    @required this.id,
     @required this.date,
     @required this.tradeCode,
     @required this.high,
