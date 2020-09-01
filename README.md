@@ -2,15 +2,8 @@
 
 A new Flutter application for the visualization of stock market data
 
-## Getting Started
+## Instructions
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. You must have an internet connection because all the data will be load from the server.
+2. As the amount of data is huge (almost 16k), you have to wait around 10 to 12 seconds to load the data.
+3. While the mobile is in portrait mode you have to scroll right/left to view all the column of the data table.
