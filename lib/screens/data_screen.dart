@@ -52,67 +52,26 @@ class _DataScreenState extends State<DataScreen> {
                   scrollDirection: Axis.horizontal,
                   child: DataTable(
                     columns: [
-                      DataColumn(
-                        label: Text('Date'),
-                        numeric: false,
-                        tooltip: 'This is Date',
-                      ),
-                      DataColumn(
-                        label: Text('Trade Code'),
-                        numeric: false,
-                        tooltip: 'This is Trade Code',
-                      ),
-                      DataColumn(
-                        label: Text('High'),
-                        numeric: false,
-                        tooltip: 'This is High',
-                      ),
-                      DataColumn(
-                        label: Text('Low'),
-                        numeric: false,
-                        tooltip: 'This is Low',
-                      ),
-                      DataColumn(
-                        label: Text('Open'),
-                        numeric: false,
-                        tooltip: 'This is Open',
-                      ),
-                      DataColumn(
-                        label: Text('Close'),
-                        numeric: false,
-                        tooltip: 'This is Close',
-                      ),
-                      DataColumn(
-                        label: Text('Volume'),
-                        numeric: false,
-                        tooltip: 'This is Volume',
-                      ),
+                      buildDataColumn('Date', false, 'This is Date'),
+                      buildDataColumn(
+                          'Trade Code', false, 'This is Trade Code'),
+                      buildDataColumn('High', false, 'This is High'),
+                      buildDataColumn('Low', false, 'This is Low'),
+                      buildDataColumn('Open', false, 'This is Open'),
+                      buildDataColumn('Close', false, 'This is Close'),
+                      buildDataColumn('Volume', false, 'This is Volume'),
                     ],
                     rows: data
                         .map(
                           (dt) => DataRow(
                             cells: [
-                              DataCell(
-                                Text(dt.date),
-                              ),
-                              DataCell(
-                                Text(dt.tradeCode),
-                              ),
-                              DataCell(
-                                Text(dt.high),
-                              ),
-                              DataCell(
-                                Text(dt.low),
-                              ),
-                              DataCell(
-                                Text(dt.open),
-                              ),
-                              DataCell(
-                                Text(dt.close),
-                              ),
-                              DataCell(
-                                Text(dt.volume),
-                              ),
+                              buildDataCell(dt.date),
+                              buildDataCell(dt.tradeCode),
+                              buildDataCell(dt.high),
+                              buildDataCell(dt.low),
+                              buildDataCell(dt.open),
+                              buildDataCell(dt.close),
+                              buildDataCell(dt.volume),
                             ],
                           ),
                         )
@@ -121,6 +80,21 @@ class _DataScreenState extends State<DataScreen> {
                 );
               },
             ),
+    );
+  }
+
+  DataCell buildDataCell(final String str) {
+    return DataCell(
+      Text(str),
+    );
+  }
+
+  DataColumn buildDataColumn(
+      final String label, final bool numeric, final String tooltip) {
+    return DataColumn(
+      label: Text(label),
+      numeric: numeric,
+      tooltip: tooltip,
     );
   }
 }
