@@ -49,6 +49,7 @@ class _DataScreenState extends State<DataScreen> {
   Widget build(BuildContext context) {
     final dataInfo = Provider.of<DataList>(context);
     final data = dataInfo.dataItems;
+    print(data.length);
 
     return Scaffold(
       appBar: AppBar(
@@ -68,8 +69,9 @@ class _DataScreenState extends State<DataScreen> {
                   child: CircularProgressIndicator(),
                 )
               : ListView.builder(
-                  itemCount: data.length,
+                  itemCount: 1,
                   itemBuilder: (ctx, index) {
+                    print(index);
                     return SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: DataTable(
@@ -87,13 +89,13 @@ class _DataScreenState extends State<DataScreen> {
                             .map(
                               (dt) => DataRow(
                                 cells: [
-                                  buildDataCell(dt.date),
-                                  buildDataCell(dt.tradeCode),
-                                  buildDataCell(dt.high),
-                                  buildDataCell(dt.low),
-                                  buildDataCell(dt.open),
-                                  buildDataCell(dt.close),
-                                  buildDataCell(dt.volume),
+                                  buildDataCell(dt.date, ''),
+                                  buildDataCell(dt.tradeCode, 'tradeCode'),
+                                  buildDataCell(dt.high, ''),
+                                  buildDataCell(dt.low, ''),
+                                  buildDataCell(dt.open, ''),
+                                  buildDataCell(dt.close, ''),
+                                  buildDataCell(dt.volume, ''),
                                 ],
                               ),
                             )
@@ -114,10 +116,19 @@ class _DataScreenState extends State<DataScreen> {
     );
   }
 
-  DataCell buildDataCell(final String str) {
-    return DataCell(
-      Text(str),
-    );
+  DataCell buildDataCell(final String str, final String tradeCode) {
+    if (tradeCode.isEmpty) {
+      return DataCell(
+        Text(str),
+      );
+    } else {
+      return DataCell(
+        Text(str),
+        onTap: () {
+          Navigator.of(context).pushNamed(TradeCodeScreen.routeName);
+        },
+      );
+    }
   }
 
   // DataCell buildTradeCodeDataCell(final String str) {
