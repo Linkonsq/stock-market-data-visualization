@@ -49,7 +49,6 @@ class _DataScreenState extends State<DataScreen> {
   Widget build(BuildContext context) {
     final dataInfo = Provider.of<DataList>(context);
     final data = dataInfo.dataItems;
-    print(data.length);
 
     return Scaffold(
       appBar: AppBar(

@@ -22,7 +22,7 @@ class DataList with ChangeNotifier {
 
       final List<Data> loadedData = [];
 
-      for (var i = 0; i < 100; i++) {
+      for (var i = 0; i < 500; i++) {
         loadedData.add(Data(
           date: extractedData[i]['date'],
           tradeCode: extractedData[i]['trade_code'],
