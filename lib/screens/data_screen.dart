@@ -88,7 +88,7 @@ class _DataScreenState extends State<DataScreen> {
                               (dt) => DataRow(
                                 cells: [
                                   buildDataCell(dt.date),
-                                  buildTradeCodeDataCell(dt.tradeCode),
+                                  buildDataCell(dt.tradeCode),
                                   buildDataCell(dt.high),
                                   buildDataCell(dt.low),
                                   buildDataCell(dt.open),
@@ -120,12 +120,12 @@ class _DataScreenState extends State<DataScreen> {
     );
   }
 
-  DataCell buildTradeCodeDataCell(final String str) {
-    return DataCell(
-      Text(str),
-      onTap: () {
-        Navigator.of(context).pushNamed(TradeCodeScreen.routeName);
-      },
-    );
-  }
+  // DataCell buildTradeCodeDataCell(final String str) {
+  //   return DataCell(
+  //     Text(str),
+  //     onTap: () {
+  //       Navigator.of(context).pushNamed(TradeCodeScreen.routeName);
+  //     },
+  //   );
+  // }
 }
