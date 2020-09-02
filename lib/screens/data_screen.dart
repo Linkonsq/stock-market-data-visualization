@@ -88,7 +88,7 @@ class _DataScreenState extends State<DataScreen> {
                               (dt) => DataRow(
                                 cells: [
                                   buildDataCell(dt.date),
-                                  buildDataCell(dt.tradeCode),
+                                  buildTradeCodeDataCell(dt.tradeCode),
                                   buildDataCell(dt.high),
                                   buildDataCell(dt.low),
                                   buildDataCell(dt.open),
@@ -105,21 +105,27 @@ class _DataScreenState extends State<DataScreen> {
     );
   }
 
-  DataCell buildDataCell(final String str) {
-    return DataCell(
-      Text(str),
-      onTap: () {
-        Navigator.of(context).pushNamed(TradeCodeScreen.routeName);
-      },
-    );
-  }
-
   DataColumn buildDataColumn(
       final String label, final bool numeric, final String tooltip) {
     return DataColumn(
       label: Text(label),
       numeric: numeric,
       tooltip: tooltip,
+    );
+  }
+
+  DataCell buildDataCell(final String str) {
+    return DataCell(
+      Text(str),
+    );
+  }
+
+  DataCell buildTradeCodeDataCell(final String str) {
+    return DataCell(
+      Text(str),
+      onTap: () {
+        Navigator.of(context).pushNamed(TradeCodeScreen.routeName);
+      },
     );
   }
 }
