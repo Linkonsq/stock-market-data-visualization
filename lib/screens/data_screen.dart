@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_market_data/providers/data_list.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:stock_market_data/screens/trade_code_screen.dart';
 
 class DataScreen extends StatefulWidget {
   @override
@@ -107,6 +108,9 @@ class _DataScreenState extends State<DataScreen> {
   DataCell buildDataCell(final String str) {
     return DataCell(
       Text(str),
+      onTap: () {
+        Navigator.of(context).pushNamed(TradeCodeScreen.routeName);
+      },
     );
   }
 

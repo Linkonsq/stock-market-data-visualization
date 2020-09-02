@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_market_data/providers/data_list.dart';
 import 'package:stock_market_data/screens/data_screen.dart';
+import 'package:stock_market_data/screens/trade_code_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: DataScreen(),
+        routes: {
+          TradeCodeScreen.routeName: (ctx) => TradeCodeScreen(),
+        },
       ),
     );
   }
