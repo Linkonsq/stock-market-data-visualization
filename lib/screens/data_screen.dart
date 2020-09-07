@@ -70,7 +70,6 @@ class _DataScreenState extends State<DataScreen> {
               : ListView.builder(
                   itemCount: 1,
                   itemBuilder: (ctx, index) {
-                    print(index);
                     return SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: DataTable(
